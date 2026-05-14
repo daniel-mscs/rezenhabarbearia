@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rezenha Barbearia — Home Mockup</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0d0d0d;
+      color: #fff;
+      font-family: 'Barlow', sans-serif;
+    }
+
+    /* ── TOPBAR ── */
+    .rz-topbar {
+      background: #111;
+      border-bottom: 1px solid #222;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .rz-logo-text {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      letter-spacing: 2px;
+      color: #fff;
+    }
+    .rz-logo-text span { color: #F07B00; }
+
+    .rz-nav {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+    .rz-nav li {
+      font-size: 13px;
+      color: #aaa;
+      cursor: pointer;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .rz-nav li.active { color: #F07B00; }
+
+    .rz-btn-nav {
+      background: #F07B00;
+      color: #fff;
+      border: none;
+      padding: 8px 18px;
+      font-family: 'Barlow', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    /* ── HERO ── */
+    .rz-hero {
+      background: linear-gradient(135deg, #0d0d0d 60%, #1a1200 100%);
+      padding: 56px 40px 48px;
+      border-bottom: 2px solid #F07B00;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .rz-hero-badge {
+      display: inline-block;
+      background: #F07B00;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 2px;
+      margin-bottom: 16px;
+    }
+
+    .rz-hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 56px;
+      line-height: 1;
+      letter-spacing: 3px;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+    .rz-hero h1 span { color: #F07B00; }
+
+    .rz-hero p {
+      font-size: 15px;
+      color: #aaa;
+      margin-bottom: 28px;
+      max-width: 340px;
+      line-height: 1.6;
+    }
+
+    .rz-hero-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .rz-btn-primary {
+      background: #F07B00;
+      color: #fff;
+      border: none;
+      padding: 14px 28px;
+      font-family: 'Barlow', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .rz-btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 1.5px solid #444;
+      padding: 13px 24px;
+      font-family: 'Barlow', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .rz-hero-logo {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    /* ── STATS ── */
+    .rz-stats {
+      display: flex;
+      gap: 32px;
+      padding: 24px 40px;
+      background: #111;
+      border-bottom: 1px solid #222;
+    }
+
+    .rz-stat { display: flex; flex-direction: column; gap: 2px; }
+
+    .rz-stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 30px;
+      color: #F07B00;
+      line-height: 1;
+    }
+
+    .rz-stat-label {
+      font-size: 12px;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* ── SECTIONS ── */
+    .rz-section {
+      padding: 40px 40px 32px;
+      border-bottom: 1px solid #1a1a1a;
+    }
+
+    .rz-divider {
+      width: 40px;
+      height: 2px;
+      background: #F07B00;
+      margin-bottom: 20px;
+    }
+
+    .rz-section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      letter-spacing: 2px;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .rz-section-title span { color: #F07B00; }
+
+    .rz-section-sub {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* ── SERVIÇOS ── */
+    .rz-services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .rz-service-card {
+      background: #161616;
+      border: 1px solid #222;
+      border-radius: 6px;
+      padding: 18px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .rz-service-icon {
+      font-size: 22px;
+      color: #F07B00;
+      margin-bottom: 4px;
+    }
+
+    .rz-service-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .rz-service-desc {
+      font-size: 12px;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .rz-service-price {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 20px;
+      color: #F07B00;
+      margin-top: 4px;
+    }
+
+    /* ── BARBEIROS ── */
+    .rz-barbers { display: flex; gap: 16px; }
+
+    .rz-barber-card {
+      background: #161616;
+      border: 1px solid #222;
+      border-radius: 6px;
+      padding: 20px 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      text-align: center;
+    }
+
+    .rz-barber-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #222;
+      border: 2px solid #F07B00;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      color: #F07B00;
+    }
+
+    .rz-barber-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .rz-barber-role {
+      font-size: 11px;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* ── CTA ── */
+    .rz-cta {
+      background: #111;
+      padding: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .rz-cta-text h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 32px;
+      color: #fff;
+      margin-bottom: 4px;
+      letter-spacing: 2px;
+    }
+    .rz-cta-text h2 span { color: #F07B00; }
+
+    .rz-cta-text p {
+      font-size: 13px;
+      color: #666;
+    }
+
+    /* ── FOOTER ── */
+    .rz-footer {
+      background: #080808;
+      padding: 16px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #1a1a1a;
+    }
+
+    .rz-footer-text { font-size: 12px; color: #444; }
+    .rz-footer-text span { color: #F07B00; }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <header class="rz-topbar">
+    <div class="rz-logo-text">Re<span>Z</span>enha</div>
+    <ul class="rz-nav">
+      <li class="active">Início</li>
+      <li>Serviços</li>
+      <li>Barbeiros</li>
+      <li>Contato</li>
+    </ul>
+    <button class="rz-btn-nav">Agendar agora</button>
+  </header>
+
+<!-- HERO -->
+  <section class="rz-hero">
+    <div>
+      <div class="rz-hero-badge">Desde 2021 · Santa Maria, RS</div>
+      <h1>Estilo que<br>fala por <span>você</span></h1>
+      <p>Cortes precisos, atendimento de qualidade e um ambiente feito pra você relaxar.</p>
+      <div class="rz-hero-actions">
+        <button class="rz-btn-primary">Agendar horário</button>
+        <button class="rz-btn-outline">Ver serviços</button>
+      </div>
+    </div>
+    <img class="rz-hero-logo" src="logo.png" alt="Logo Rezenha Barbearia" />
+  </section>
+
+  <!-- STATS -->
+  <div class="rz-stats">
+    <div class="rz-stat">
+      <div class="rz-stat-num">3+</div>
+      <div class="rz-stat-label">Anos de experiência</div>
+    </div>
+    <div class="rz-stat">
+      <div class="rz-stat-num">3</div>
+      <div class="rz-stat-label">Barbeiros especializados</div>
+    </div>
+    <div class="rz-stat">
+      <div class="rz-stat-num">100%</div>
+      <div class="rz-stat-label">Satisfação garantida</div>
+    </div>
+  </div>
+
+  <!-- SERVIÇOS -->
+  <section class="rz-section">
+    <div class="rz-divider"></div>
+    <div class="rz-section-title">Nossos <span>serviços</span></div>
+    <div class="rz-section-sub">Escolha o que você precisa</div>
+    <div class="rz-services">
+
+      <div class="rz-service-card">
+        <div class="rz-service-icon"><i class="ti ti-cut" aria-hidden="true"></i></div>
+        <div class="rz-service-name">Corte simples</div>
+        <div class="rz-service-desc">Tesoura ou máquina, do seu jeito</div>
+        <div class="rz-service-price">R$ 35</div>
+      </div>
+
+      <div class="rz-service-card">
+        <div class="rz-service-icon"><i class="ti ti-star" aria-hidden="true"></i></div>
+        <div class="rz-service-name">Corte + barba</div>
+        <div class="rz-service-desc">Combo completo pra sair impecável</div>
+        <div class="rz-service-price">R$ 55</div>
+      </div>
+
+      <div class="rz-service-card">
+        <div class="rz-service-icon"><i class="ti ti-droplet" aria-hidden="true"></i></div>
+        <div class="rz-service-name">Barba</div>
+        <div class="rz-service-desc">Navalha e acabamento refinado</div>
+        <div class="rz-service-price">R$ 25</div>
+      </div>
+
+      <!-- Adicione mais cards de serviço aqui se precisar -->
+
+    </div>
+  </section>
+
+  <!-- BARBEIROS -->
+  <section class="rz-section">
+    <div class="rz-divider"></div>
+    <div class="rz-section-title">Nosso <span>time</span></div>
+    <div class="rz-section-sub">Profissionais que entendem do assunto</div>
+    <div class="rz-barbers">
+
+      <div class="rz-barber-card">
+        <!-- Substitua o texto pelas iniciais do barbeiro ou use uma <img> -->
+        <div class="rz-barber-avatar">B1</div>
+        <div class="rz-barber-name">Barbeiro 1</div>
+        <div class="rz-barber-role">Especialista em degradê</div>
+      </div>
+
+      <div class="rz-barber-card">
+        <div class="rz-barber-avatar">B2</div>
+        <div class="rz-barber-name">Barbeiro 2</div>
+        <div class="rz-barber-role">Cortes clássicos</div>
+      </div>
+
+      <div class="rz-barber-card">
+        <div class="rz-barber-avatar">B3</div>
+        <div class="rz-barber-name">Barbeiro 3</div>
+        <div class="rz-barber-role">Barba e navalha</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="rz-cta">
+    <div class="rz-cta-text">
+      <h2>Pronto pra seu próximo <span>corte?</span></h2>
+      <p>Agende online em menos de 1 minuto, sem precisar ligar</p>
+    </div>
+    <button class="rz-btn-primary">Agendar agora</button>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="rz-footer">
+    <div class="rz-footer-text">© 2025 <span>ReZenha Barbearia</span> · Santa Maria, RS</div>
+    <div class="rz-footer-text">rezenhabarbearia.com.br</div>
+  </footer>
+
+</body>
+</html>

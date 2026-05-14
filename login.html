@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rezenha Barbearia — Login</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0d0d0d;
+      font-family: 'Barlow', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 24px;
+    }
+
+    .rz-login-box {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 40px 36px;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .rz-lock-icon {
+      text-align: center;
+      font-size: 32px;
+      color: #F07B00;
+      margin-bottom: 16px;
+    }
+
+    .rz-login-logo { text-align: center; margin-bottom: 8px; }
+
+    .rz-logo-text {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 32px;
+      letter-spacing: 3px;
+      color: #fff;
+    }
+    .rz-logo-text span { color: #F07B00; }
+
+    .rz-login-sub {
+      text-align: center;
+      font-size: 12px;
+      color: #555;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 32px;
+    }
+
+    .rz-divider-center {
+      width: 32px;
+      height: 2px;
+      background: #F07B00;
+      margin: 0 auto 28px;
+    }
+
+    .rz-input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .rz-field-label {
+      font-size: 12px;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .rz-input-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .rz-input-icon {
+      position: absolute;
+      left: 14px;
+      font-size: 16px;
+      color: #444;
+    }
+
+    .rz-input {
+      width: 100%;
+      background: #161616;
+      border: 1px solid #222;
+      border-radius: 8px;
+      padding: 12px 16px 12px 40px;
+      color: #fff;
+      font-family: 'Barlow', sans-serif;
+      font-size: 14px;
+    }
+
+    .rz-input::placeholder { color: #444; }
+    .rz-input:focus { outline: none; border-color: #F07B00; }
+
+    .rz-btn-primary {
+      background: #F07B00;
+      color: #fff;
+      border: none;
+      padding: 14px;
+      font-family: 'Barlow', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 8px;
+    }
+
+    .rz-login-footer {
+      text-align: center;
+      font-size: 12px;
+      color: #444;
+      margin-top: 24px;
+    }
+
+    .rz-login-footer span { color: #F07B00; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+  <div class="rz-login-box">
+    <div class="rz-login-logo">
+  <img src="logo.png" alt="Rezenha Barbearia" style="width: 140px; height: 140px; object-fit: contain;" />
+</div>
+<div class="rz-login-sub">Acesso restrito — painel interno</div>
+    <div class="rz-divider-center"></div>
+
+    <div class="rz-input-group">
+      <div class="rz-field-label">E-mail</div>
+      <div class="rz-input-wrap">
+        <i class="ti ti-mail rz-input-icon" aria-hidden="true"></i>
+        <input class="rz-input" type="email" placeholder="seu@email.com" />
+      </div>
+    </div>
+
+    <div class="rz-input-group">
+      <div class="rz-field-label">Senha</div>
+      <div class="rz-input-wrap">
+        <i class="ti ti-lock rz-input-icon" aria-hidden="true"></i>
+        <input class="rz-input" type="password" placeholder="••••••••" />
+      </div>
+    </div>
+
+    <button class="rz-btn-primary">Entrar no painel</button>
+
+    <div class="rz-login-footer">
+      Esqueceu a senha? <span>Recuperar acesso</span>
+    </div>
+  </div>
+
+</body>
+</html>
