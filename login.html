@@ -16,7 +16,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 48px 24px;
+      padding: 24px 16px;
     }
 
     .rz-login-box {
@@ -26,13 +26,6 @@
       padding: 40px 36px;
       width: 100%;
       max-width: 400px;
-    }
-
-    .rz-lock-icon {
-      text-align: center;
-      font-size: 32px;
-      color: #F07B00;
-      margin-bottom: 16px;
     }
 
     .rz-login-logo { text-align: center; margin-bottom: 8px; }
@@ -116,6 +109,9 @@
       cursor: pointer;
       width: 100%;
       margin-top: 8px;
+      display: block;
+      text-align: center;
+      text-decoration: none;
     }
 
     .rz-login-footer {
@@ -126,15 +122,19 @@
     }
 
     .rz-login-footer span { color: #F07B00; cursor: pointer; }
+
+    @media (max-width: 768px) {
+      .rz-login-box { padding: 32px 20px; }
+    }
   </style>
 </head>
 <body>
 
   <div class="rz-login-box">
     <div class="rz-login-logo">
-  <img src="logo.png" alt="Rezenha Barbearia" style="width: 140px; height: 140px; object-fit: contain;" />
-</div>
-<div class="rz-login-sub">Acesso restrito — painel interno</div>
+      <img src="logo.png" alt="Rezenha Barbearia" style="width:120px;height:120px;object-fit:contain;" />
+    </div>
+    <div class="rz-login-sub">Acesso restrito — painel interno</div>
     <div class="rz-divider-center"></div>
 
     <div class="rz-input-group">
@@ -153,8 +153,8 @@
       </div>
     </div>
 
- <a href="paineladm.html" class="rz-btn-primary">Entrar no painel</a>
- 
+    <a href="paineladm.html" class="rz-btn-primary">Entrar no painel</a>
+
     <div class="rz-login-footer">
       Esqueceu a senha? <span>Recuperar acesso</span>
     </div>

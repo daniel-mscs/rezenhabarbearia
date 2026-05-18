@@ -8,388 +8,102 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0d0d0d; color: #fff; font-family: 'Barlow', sans-serif; overflow-x: hidden; }
 
-    body {
-      background: #0d0d0d;
-      color: #fff;
-      font-family: 'Barlow', sans-serif;
-    }
-
-    /* ── TOPBAR ── */
-    .rz-topbar {
-      background: #111;
-      border-bottom: 1px solid #222;
-      padding: 12px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .rz-logo-text {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 22px;
-      letter-spacing: 2px;
-      color: #fff;
-    }
+    .rz-topbar { background: #111; border-bottom: 1px solid #222; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; }
+    .rz-logo-text { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 2px; color: #fff; }
     .rz-logo-text span { color: #F07B00; }
-
-    .rz-nav {
-      display: flex;
-      gap: 20px;
-      list-style: none;
-    }
-    .rz-nav li {
-      font-size: 13px;
-      color: #aaa;
-      cursor: pointer;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
+    .rz-nav { display: flex; gap: 20px; list-style: none; }
+    .rz-nav li { font-size: 13px; color: #aaa; cursor: pointer; letter-spacing: 1px; text-transform: uppercase; }
     .rz-nav li.active { color: #F07B00; }
+    .rz-nav a { color: inherit; text-decoration: none; }
 
-    /* ── PAGE ── */
-    .rz-page {
-      padding: 40px;
-      max-width: 860px;
-      margin: 0 auto;
-    }
-
-    .rz-divider {
-      width: 40px;
-      height: 2px;
-      background: #F07B00;
-      margin-bottom: 20px;
-    }
-
-    .rz-page-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 36px;
-      letter-spacing: 2px;
-      color: #fff;
-      margin-bottom: 4px;
-    }
+    .rz-page { padding: 40px; max-width: 860px; margin: 0 auto; }
+    .rz-divider { width: 40px; height: 2px; background: #F07B00; margin-bottom: 20px; }
+    .rz-page-title { font-family: 'Bebas Neue', sans-serif; font-size: 36px; letter-spacing: 2px; color: #fff; margin-bottom: 4px; }
     .rz-page-title span { color: #F07B00; }
+    .rz-page-sub { font-size: 13px; color: #666; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 32px; }
 
-    .rz-page-sub {
-      font-size: 13px;
-      color: #666;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 32px;
-    }
-
-    /* ── STEPS ── */
-    .rz-steps {
-      display: flex;
-      align-items: center;
-      gap: 0;
-      margin-bottom: 36px;
-      border-bottom: 1px solid #222;
-      padding-bottom: 0;
-    }
-
-    .rz-step {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 0 24px 16px 0;
-      border-bottom: 2px solid transparent;
-      margin-bottom: -1px;
-    }
-
+    .rz-steps { display: flex; align-items: center; margin-bottom: 36px; border-bottom: 1px solid #222; padding-bottom: 0; flex-wrap: wrap; gap: 4px; }
+    .rz-step { display: flex; align-items: center; gap: 8px; padding: 0 16px 16px 0; border-bottom: 2px solid transparent; margin-bottom: -1px; }
     .rz-step.active { border-bottom-color: #F07B00; }
-
-    .rz-step-num {
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      background: #222;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      font-weight: 600;
-      color: #666;
-    }
-
+    .rz-step-num { width: 26px; height: 26px; border-radius: 50%; background: #222; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: #666; }
     .rz-step.active .rz-step-num { background: #F07B00; color: #fff; }
     .rz-step.done .rz-step-num { background: #1a3a1a; color: #4caf50; }
-
-    .rz-step-label {
-      font-size: 13px;
-      color: #666;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
+    .rz-step-label { font-size: 12px; color: #666; text-transform: uppercase; letter-spacing: 1px; }
     .rz-step.active .rz-step-label { color: #fff; }
     .rz-step.done .rz-step-label { color: #4caf50; }
+    .rz-step-arrow { font-size: 16px; color: #333; margin-right: 8px; }
 
-    .rz-step-arrow { font-size: 16px; color: #333; margin-right: 16px; }
-
-    /* ── FIELD LABEL ── */
-    .rz-field-label {
-      font-size: 12px;
-      color: #666;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
-    }
-
+    .rz-field-label { font-size: 12px; color: #666; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
     .rz-section-block { margin-bottom: 28px; }
 
-    /* ── BARBEIROS ── */
-    .rz-barbers-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
+    .rz-barbers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .rz-barber-card { background: #161616; border: 1px solid #222; border-radius: 8px; padding: 20px 16px; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; cursor: pointer; }
+    .rz-barber-card.selected { border-color: #F07B00; background: #1a1000; }
+    .rz-barber-avatar { width: 56px; height: 56px; border-radius: 50%; background: #222; border: 2px solid #333; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 20px; color: #aaa; }
+    .rz-barber-card.selected .rz-barber-avatar { border-color: #F07B00; color: #F07B00; }
+    .rz-barber-name { font-size: 14px; font-weight: 600; color: #fff; text-transform: uppercase; }
+    .rz-barber-role { font-size: 11px; color: #666; text-transform: uppercase; }
 
-    .rz-barber-card {
-      background: #161616;
-      border: 1px solid #222;
-      border-radius: 8px;
-      padding: 20px 16px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      text-align: center;
-      cursor: pointer;
-    }
-
-    .rz-barber-card.selected {
-      border-color: #F07B00;
-      background: #1a1000;
-    }
-
-    .rz-barber-avatar {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: #222;
-      border: 2px solid #333;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 20px;
-      color: #aaa;
-    }
-
-    .rz-barber-card.selected .rz-barber-avatar {
-      border-color: #F07B00;
-      color: #F07B00;
-    }
-
-    .rz-barber-name {
-      font-size: 14px;
-      font-weight: 600;
-      color: #fff;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .rz-barber-role {
-      font-size: 11px;
-      color: #666;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    /* ── SERVIÇOS ── */
-    .rz-services-list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .rz-service-row {
-      background: #161616;
-      border: 1px solid #222;
-      border-radius: 8px;
-      padding: 14px 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      cursor: pointer;
-    }
-
-    .rz-service-row.selected {
-      border-color: #F07B00;
-      background: #1a1000;
-    }
-
+    .rz-services-list { display: flex; flex-direction: column; gap: 10px; }
+    .rz-service-row { background: #161616; border: 1px solid #222; border-radius: 8px; padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; }
+    .rz-service-row.selected { border-color: #F07B00; background: #1a1000; }
     .rz-service-info { display: flex; flex-direction: column; gap: 2px; }
-
-    .rz-service-name {
-      font-size: 14px;
-      font-weight: 600;
-      color: #fff;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
+    .rz-service-name { font-size: 14px; font-weight: 600; color: #fff; text-transform: uppercase; }
     .rz-service-duration { font-size: 12px; color: #666; }
+    .rz-service-price { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: #F07B00; }
 
-    .rz-service-price {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 22px;
-      color: #F07B00;
-    }
+    .rz-datetime-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .rz-date-input { width: 100%; background: #161616; border: 1px solid #222; border-radius: 8px; padding: 12px 16px; color: #fff; font-family: 'Barlow', sans-serif; font-size: 14px; }
 
-    /* ── DATA E HORA ── */
-    .rz-datetime-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
+    .rz-slots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    .rz-slot { background: #161616; border: 1px solid #222; border-radius: 6px; padding: 10px 0; text-align: center; font-size: 13px; font-weight: 600; color: #aaa; cursor: pointer; }
+    .rz-slot.selected { background: #F07B00; border-color: #F07B00; color: #fff; }
+    .rz-slot.blocked { background: #111; border-color: #1a1a1a; color: #333; cursor: not-allowed; text-decoration: line-through; }
 
-    .rz-date-input {
-      width: 100%;
-      background: #161616;
-      border: 1px solid #222;
-      border-radius: 8px;
-      padding: 12px 16px;
-      color: #fff;
-      font-family: 'Barlow', sans-serif;
-      font-size: 14px;
-    }
+    .rz-warning { background: #1a1000; border: 1px solid #F07B00; border-radius: 8px; padding: 12px 16px; font-size: 13px; color: #F07B00; display: flex; align-items: center; gap: 10px; margin-bottom: 24px; }
 
-    .rz-slots {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 8px;
-    }
-
-    .rz-slot {
-      background: #161616;
-      border: 1px solid #222;
-      border-radius: 6px;
-      padding: 10px 0;
-      text-align: center;
-      font-size: 13px;
-      font-weight: 600;
-      color: #aaa;
-      cursor: pointer;
-    }
-
-    .rz-slot.selected {
-      background: #F07B00;
-      border-color: #F07B00;
-      color: #fff;
-    }
-
-    /* Horário bloqueado — ocupado ou dentro das 2h */
-    .rz-slot.blocked {
-      background: #111;
-      border-color: #1a1a1a;
-      color: #333;
-      cursor: not-allowed;
-      text-decoration: line-through;
-    }
-
-    /* ── AVISO ── */
-    .rz-warning {
-      background: #1a1000;
-      border: 1px solid #F07B00;
-      border-radius: 8px;
-      padding: 12px 16px;
-      font-size: 13px;
-      color: #F07B00;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 24px;
-    }
-
-    /* ── DADOS DO CLIENTE ── */
-    .rz-form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
+    .rz-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     .rz-input-group { display: flex; flex-direction: column; gap: 8px; }
-
-    .rz-input {
-      background: #161616;
-      border: 1px solid #222;
-      border-radius: 8px;
-      padding: 12px 16px;
-      color: #fff;
-      font-family: 'Barlow', sans-serif;
-      font-size: 14px;
-      width: 100%;
-    }
-
+    .rz-input { background: #161616; border: 1px solid #222; border-radius: 8px; padding: 12px 16px; color: #fff; font-family: 'Barlow', sans-serif; font-size: 14px; width: 100%; }
     .rz-input::placeholder { color: #444; }
 
-    /* ── RESUMO ── */
-    .rz-summary {
-      background: #111;
-      border: 1px solid #222;
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 24px;
-    }
-
-    .rz-summary-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 18px;
-      letter-spacing: 1px;
-      color: #fff;
-      margin-bottom: 16px;
-    }
-
-    .rz-summary-row {
-      display: flex;
-      justify-content: space-between;
-      font-size: 13px;
-      color: #888;
-      padding: 6px 0;
-      border-bottom: 1px solid #1a1a1a;
-    }
-
+    .rz-summary { background: #111; border: 1px solid #222; border-radius: 8px; padding: 20px; margin-bottom: 24px; }
+    .rz-summary-title { font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 1px; color: #fff; margin-bottom: 16px; }
+    .rz-summary-row { display: flex; justify-content: space-between; font-size: 13px; color: #888; padding: 6px 0; border-bottom: 1px solid #1a1a1a; }
     .rz-summary-row:last-child { border-bottom: none; }
     .rz-summary-row span:last-child { color: #fff; font-weight: 600; }
-    .rz-summary-row.total span:last-child {
-      color: #F07B00;
-      font-size: 18px;
-      font-family: 'Bebas Neue', sans-serif;
-      letter-spacing: 1px;
-    }
+    .rz-summary-row.total span:last-child { color: #F07B00; font-size: 18px; font-family: 'Bebas Neue', sans-serif; }
 
-    /* ── BOTÃO ── */
-    .rz-btn-primary {
-      background: #F07B00;
-      color: #fff;
-      border: none;
-      padding: 16px 32px;
-      font-family: 'Barlow', sans-serif;
-      font-size: 15px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      border-radius: 6px;
-      cursor: pointer;
-      width: 100%;
-    }
+    .rz-btn-primary { background: #F07B00; color: #fff; border: none; padding: 16px 32px; font-family: 'Barlow', sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border-radius: 6px; cursor: pointer; width: 100%; }
+    .rz-wpp-note { text-align: center; font-size: 12px; color: #555; margin-top: 12px; display: flex; align-items: center; justify-content: center; gap: 6px; }
 
-    .rz-wpp-note {
-      text-align: center;
-      font-size: 12px;
-      color: #555;
-      margin-top: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      .rz-topbar { padding: 12px 16px; }
+      .rz-nav { display: none; }
+
+      .rz-page { padding: 24px 16px; }
+      .rz-page-title { font-size: 28px; }
+
+      .rz-steps { gap: 2px; }
+      .rz-step { padding: 0 8px 12px 0; }
+      .rz-step-label { display: none; }
+      .rz-step-arrow { margin-right: 4px; font-size: 13px; }
+
+      .rz-barbers-grid { grid-template-columns: 1fr; }
+      .rz-barber-card { flex-direction: row; justify-content: flex-start; text-align: left; padding: 14px 16px; }
+
+      .rz-datetime-grid { grid-template-columns: 1fr; }
+      .rz-slots { grid-template-columns: repeat(3, 1fr); }
+
+      .rz-form-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- TOPBAR -->
   <header class="rz-topbar">
     <div class="rz-logo-text">Re<span>Z</span>enha</div>
     <ul class="rz-nav">
@@ -405,7 +119,6 @@
     <div class="rz-page-title">Fazer <span>agendamento</span></div>
     <div class="rz-page-sub">Preencha as etapas abaixo</div>
 
-    <!-- STEPS -->
     <div class="rz-steps">
       <div class="rz-step done">
         <div class="rz-step-num"><i class="ti ti-check" style="font-size:13px"></i></div>
@@ -433,7 +146,6 @@
       </div>
     </div>
 
-    <!-- ETAPA 1 — BARBEIRO -->
     <div class="rz-section-block">
       <div class="rz-field-label">1. Escolha o barbeiro</div>
       <div class="rz-barbers-grid">
@@ -455,44 +167,39 @@
       </div>
     </div>
 
-    <!-- ETAPA 2 — SERVIÇO -->
     <div class="rz-section-block">
       <div class="rz-field-label">2. Escolha o serviço</div>
       <div class="rz-services-list">
         <div class="rz-service-row selected">
           <div class="rz-service-info">
             <div class="rz-service-name">Corte simples</div>
-            <div class="rz-service-duration"><i class="ti ti-clock" style="font-size:12px; vertical-align:-1px"></i> ~30 min</div>
+            <div class="rz-service-duration"><i class="ti ti-clock" style="font-size:12px;vertical-align:-1px"></i> ~30 min</div>
           </div>
           <div class="rz-service-price">R$ 35</div>
         </div>
         <div class="rz-service-row">
           <div class="rz-service-info">
             <div class="rz-service-name">Corte + barba</div>
-            <div class="rz-service-duration"><i class="ti ti-clock" style="font-size:12px; vertical-align:-1px"></i> ~50 min</div>
+            <div class="rz-service-duration"><i class="ti ti-clock" style="font-size:12px;vertical-align:-1px"></i> ~50 min</div>
           </div>
           <div class="rz-service-price">R$ 55</div>
         </div>
         <div class="rz-service-row">
           <div class="rz-service-info">
             <div class="rz-service-name">Barba</div>
-            <div class="rz-service-duration"><i class="ti ti-clock" style="font-size:12px; vertical-align:-1px"></i> ~20 min</div>
+            <div class="rz-service-duration"><i class="ti ti-clock" style="font-size:12px;vertical-align:-1px"></i> ~20 min</div>
           </div>
           <div class="rz-service-price">R$ 25</div>
         </div>
-        <!-- Adicione mais serviços aqui se precisar -->
       </div>
     </div>
 
-    <!-- ETAPA 3 — DATA E HORA -->
     <div class="rz-section-block">
       <div class="rz-field-label">3. Escolha a data e horário</div>
-
       <div class="rz-warning">
-        <i class="ti ti-alert-circle" style="font-size:18px; flex-shrink:0"></i>
+        <i class="ti ti-alert-circle" style="font-size:18px;flex-shrink:0"></i>
         Agendamentos com menos de 2 horas de antecedência não são permitidos.
       </div>
-
       <div class="rz-datetime-grid">
         <div>
           <div class="rz-field-label">Data</div>
@@ -501,7 +208,6 @@
         <div>
           <div class="rz-field-label">Horários disponíveis</div>
           <div class="rz-slots">
-            <!-- blocked = ocupado ou dentro das 2h de antecedência -->
             <div class="rz-slot blocked">08:00</div>
             <div class="rz-slot blocked">08:30</div>
             <div class="rz-slot">09:00</div>
@@ -519,7 +225,6 @@
       </div>
     </div>
 
-    <!-- ETAPA 4 — DADOS DO CLIENTE -->
     <div class="rz-section-block">
       <div class="rz-field-label">4. Seus dados</div>
       <div class="rz-form-grid">
@@ -534,7 +239,6 @@
       </div>
     </div>
 
-    <!-- RESUMO -->
     <div class="rz-summary">
       <div class="rz-summary-title">Resumo do agendamento</div>
       <div class="rz-summary-row"><span>Barbeiro</span><span>Barbeiro 1</span></div>
@@ -544,10 +248,9 @@
       <div class="rz-summary-row total"><span>Total</span><span>R$ 35</span></div>
     </div>
 
-    <!-- CONFIRMAR -->
     <button class="rz-btn-primary">Confirmar agendamento</button>
     <div class="rz-wpp-note">
-      <i class="ti ti-brand-whatsapp" style="font-size:16px; color:#25d366"></i>
+      <i class="ti ti-brand-whatsapp" style="font-size:16px;color:#25d366"></i>
       Você receberá a confirmação pelo WhatsApp
     </div>
   </div>
